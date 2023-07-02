@@ -1,0 +1,74 @@
+{% extends 'generator/base.html' %}
+{% block title %}
+<title>Password Generator</title>
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <h2 class="heading">Password Generator</h2>
+    <form action="{% url 'password' %}" class="password-form">
+        <label for="length">Password Length:</label>
+        <select name="length" id="length" class="select-input">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12" selected="selected">12</option>
+        </select>
+        <br>
+        <div class="checkbox-group">
+            <input type="checkbox" name="uppercase" id="uppercase" class="checkbox-input">
+            <label for="uppercase" class="checkbox-label">Uppercase</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" name="number" id="number" class="checkbox-input">
+            <label for="number" class="checkbox-label">Numbers</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" name="special" id="special" class="checkbox-input">
+            <label for="special" class="checkbox-label">Special Characters</label>
+        </div>
+        <input type="submit" value="Generate" class="submit-button">
+    </form>
+</div>
+    <style>
+    .container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.select-input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+  margin-bottom: 10px;
+}
+
+.checkbox-label {
+  margin-left: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+</style>
+
+{% endblock content %}
